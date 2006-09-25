@@ -7,7 +7,7 @@ use File::Find;
 use Cwd;
 use Number::Bytes::Human qw( format_bytes );
 no warnings 'File::Find';
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =pod
 
@@ -142,13 +142,13 @@ sub getsize {
 	my %options;
 	if ( $$self{ 'followsymlinks' } ) {
 		%options = (
-			wanted		=> \&findcb,
+			wanted		=> \&_findcb,
 			follow		=> 1,	# follow symlinks
 			follow_skip => 2	# skip duplicate links, but don't die doing it
 		);
 	} else {
 		%options = (
-			wanted		=> \&findcb
+			wanted		=> \&_findcb
 		);
 	}
 	my $dir = $$self{ 'dir' } || getcwd();
