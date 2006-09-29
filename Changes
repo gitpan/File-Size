@@ -8,3 +8,6 @@ Revision history for Perl extension File::Size.
 
 0.03  Mon Sep 25 14:20:48 IDT 2006
 	- Fixed a bug regarding the findcb() subroutine
+
+0.04  Fri Sep 29 23:30:07 IDT 2006
+	- Added missing dependencies information to Makefile.PL

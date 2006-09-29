@@ -7,7 +7,7 @@ use File::Find;
 use Cwd;
 use Number::Bytes::Human qw( format_bytes );
 no warnings 'File::Find';
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =pod
 
