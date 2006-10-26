@@ -14,3 +14,6 @@ Revision history for Perl extension File::Size.
 
 0.05  Thu Oct 26 15:29:41 IST 2006
 	- Fixed a bug reported by Jaime Prilusky, which reports wrong directory size when calling the getsize() method more than 1 time. Thank you Jaime!
+
+0.06 Thu Oct 26 20:23:24 IST 2006
+	- Useless varialbe dropped
