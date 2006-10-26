@@ -7,7 +7,7 @@ use File::Find;
 use Cwd;
 use Number::Bytes::Human qw( format_bytes );
 no warnings 'File::Find';
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =pod
 
@@ -154,7 +154,8 @@ sub getsize {
 	my $dir = $$self{ 'dir' } || getcwd();
 	my $blocksize = $$self{ 'blocksize' } || 1;
 	find( \%options, $dir );
-	return $$self{ 'humanreadable' } ? format_bytes( $size ) : sprintf( '%d', $size / $blocksize );
+	my $printsize = $size; $size = 0;
+	return $$self{ 'humanreadable' } ? format_bytes( $printsize ) : sprintf( '%d', $printsize / $blocksize );
 }
 
 sub _findcb {
